@@ -1,9 +1,0 @@
-import pandas as pd 
-
-df = pd.read_csv(r"C:\Users\Chong\Desktop\ds_salaries.csv")
-
-column = df['job_title']
-functie_per_group = df['job_title'].value_counts()
-functie_100 = functie_per_group[functie_per_group>100]
-
-clean_data = df[df['job_title'].isin(functie_100.index)]
