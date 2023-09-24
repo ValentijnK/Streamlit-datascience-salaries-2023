@@ -5,6 +5,11 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import os
 
+st.set_page_config(
+    page_title='Home'
+)
+
+
 # Load CSV file into DataFrame
 df = pd.read_csv(os.getcwd() + '/ds_salaries.csv')
 
@@ -17,9 +22,7 @@ df_salary = df[df['job_title'].isin(functie_100.index)]
 
 # Setup Streamlit app
 st.title('Salaris van datascientists in 2023')
-st.set_page_config(
-    page_title='Home'
-)
+
 st.write(
 'Welkom bij onze Streamlit-app! Stap in de toekomst van gegevensanalyse terwijl we je meenemen op een boeiende reis door de wereld van datawetenschapssalarissen in 2023.'
 'Met behulp van een uitgebreide dataset hebben we een intuïtieve en interactieve ervaring gecreëerd waarmee je diep in de gegevens kunt duiken en inzicht kunt krijgen in de trends, '
@@ -31,10 +34,9 @@ st.divider()
 st.dataframe(df)
 st.write('@Michael: Text over de analyse van de data mag hier..')
 
-df_salary_per_role = df_salary.groupby('job_title')['salary_in_usd']
-sns.barplot(data=df_salary, x='job_title', y='salary_in_usd')
-plt.show()
-
+df_salary_per_role = df_salary.groupby('job_title', as_index=True)['salary_in_usd'].mean()
+print(df_salary_per_role)
+st.bar_chart(data=df_salary_per_role, color='salary_in_usd')
 
 
 
