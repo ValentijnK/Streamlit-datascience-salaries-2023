@@ -34,10 +34,9 @@ st.divider()
 st.dataframe(df)
 st.write('@Michael: Text over de analyse van de data mag hier..')
 
-df_salary_per_role = df_salary.groupby('job_title')['salary_in_usd']
-sns.barplot(data=df_salary, x='job_title', y='salary_in_usd')
-plt.show()
-
+df_salary_per_role = df_salary.groupby('job_title', as_index=True)['salary_in_usd'].mean()
+print(df_salary_per_role)
+st.bar_chart(data=df_salary_per_role, color='salary_in_usd')
 
 
 
