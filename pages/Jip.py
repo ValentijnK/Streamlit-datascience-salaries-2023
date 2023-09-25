@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import plotly.express as px
 import os
 
 # Setting page configuration
@@ -20,4 +21,7 @@ df_salary = df[df['job_title'].isin(functie_100.index)]
 
 company_size_salary = df_salary.groupby('company_size')['salary_in_usd'].mean().round(0).sort_values(ascending=False).reset_index()
 # barplot = sns.barplot(data=company_size_salary, x='company_size', y='salary_in_usd', errorbar='sd')
-st.bar_chart(data=company_size_salary, x='company_size', y='salary_in_usd')
+# st.bar_chart(data=company_size_salary, x='company_size', y='salary_in_usd')
+fig = px.bar(company_size_salary, x='company_size', y='salary_in_usd')
+fig.update_layout()
+st.plotly_chart(fig)
