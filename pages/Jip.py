@@ -30,3 +30,11 @@ fig.update_xaxes(
     ticktext=['Large', 'Medium', 'Small']
 )
 st.plotly_chart(fig)
+
+
+# Salary vs company size box plot
+fig = px.box(df_salary, x='company_size', y='salary_in_usd',
+             labels={'salary_in_usd': 'Salary in USD', 'company_size': 'Company Size'},
+             title='Salary vs. Company Size')
+fig.update_xaxes(categoryorder='array', categoryarray=['L', 'M', 'S'], tickvals=[0, 1, 2], ticktext=['Large', 'Medium', 'Small'])
+st.plotly_chart(fig)
