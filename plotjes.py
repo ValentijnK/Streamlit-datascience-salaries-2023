@@ -10,7 +10,7 @@ st.title('Salary of datascientist in 2023')
 
 import pandas as pd 
 import numpy as np
-df = pd.read_csv(r"C:\Users\Chong\Desktop\ds_salaries.csv")
+df = pd.read_csv("ds_salaries.csv")
 
 column = df['job_title']
 functie_per_group = df['job_title'].value_counts()
