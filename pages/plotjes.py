@@ -1,15 +1,10 @@
-# Bezem door de data
-# Salary vs. experience lvl
-# Salary over the years
-# Slider
-
 import streamlit as st
 
 # Setup Streamlit app
-st.title('Salary of datascientist in 2023')
+st.title('Salary of datascientist')
 
 import pandas as pd 
-import numpy as np
+
 df = pd.read_csv("ds_salaries.csv")
 
 column = df['job_title']
@@ -17,66 +12,74 @@ functie_per_group = df['job_title'].value_counts()
 functie_100 = functie_per_group[functie_per_group>100]
 clean_data = df[df['job_title'].isin(functie_100.index)]
 clean_data['work_year'] = clean_data['work_year'].astype('str')
-# print(clean_data.head())
 
-# print(clean_data.info())
 
 x = 'experience_level'
 y = 'salary_in_usd'
 
 import seaborn as sns
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 a = clean_data.groupby('experience_level')['salary_in_usd'].mean()
 
+# Salary historgram by experience level
+fig = px.histogram(clean_data, x="salary_in_usd", nbins = 10, color = 'experience_level',
+                   category_orders={'experience_level': ['SE', 'MI', 'EX', 'EN']},
+                   text_auto = True)
+# Overlay both histograms
+fig.update_layout(barmode='overlay')
+# Reduce opacity to see both histograms
+fig.update_traces(opacity=0.5)
+fig.update_layout(
+    title_text='Salary Histogram', 
+    xaxis_title_text='Salary (USD)', 
+    yaxis_title_text='Count'
+)
+st.plotly_chart(fig)
 
 
-st.title("Salary Data Histogram")
-plt.figure(figsize=(8, 6))
-sns.histplot(data=clean_data, x='salary_in_usd', hue='experience_level', element='step', bins=10)
-plt.xlabel("Salary (USD)")
-plt.ylabel("Count")
-plt.title("Salary Data Histogram")
-st.pyplot()
-
-
-
-st.title("Salary Data Boxplot by Experience Level")
-plt.figure(figsize=(8, 6))
-sns.boxplot(data=clean_data, x='experience_level', y='salary_in_usd', palette="Set2")
-plt.xlabel("Experience Level")
-plt.ylabel("Salary (USD)")
-st.pyplot()
-
-
-
-
-st.title("Salary Data Boxplot by Work year")
-plt.figure(figsize=(12, 12))
-sns.boxplot(data = clean_data, x = 'work_year', y = 'salary_in_usd', hue = 'experience_level',
-            order = ['2020','2021','2022','2023'],
-            hue_order=['EN','EX','MI','SE'])
-plt.xlabel("Work year")
-plt.ylabel("Salary (USD)")
-st.pyplot()
-
-
-
-#data groeperen
-b = clean_data.groupby(['work_year', 'experience_level'])['salary_in_usd'].mean()
-st.title("Salary Data Barplot by Work year")
-plt.figure(figsize=(8, 6))
-sns.barplot(data = b.reset_index(), x = 'work_year', y = 'salary_in_usd', 
-            hue = 'experience_level', ci = None, 
-            order = ['2020','2021','2022','2023'],
-            hue_order=['EN','EX','MI','SE']
-            )
-plt.xlabel("Work year")
-plt.ylabel("Salary (USD)")
-st.pyplot()
-
-st.bar_chart(data = b.reset_index(),  x = 'work_year', y = 'salary_in_usd', 
+# Salary vs experience_level box plot
+fig = px.box(clean_data, x='experience_level', y='salary_in_usd',
+             labels={'salary_in_usd': 'Salary in USD', 'experience_level': 'Experience level'},
+             title='Salary vs Experience Level',
              color = 'experience_level',
-             use_container_width  = False)
+             category_orders={'experience_level': ['EN', 'EX', 'MI', 'SE']},
+             )
+st.plotly_chart(fig)
 
-# print(b.reset_index())
+
+
+# Salary vs experience_level box plot by year
+fig = px.box(clean_data, x='work_year', y='salary_in_usd', color='experience_level',
+             category_orders={'work_year': ['2020', '2021', '2022', '2023'],
+                              'experience_level': ['EN', 'EX', 'MI', 'SE']},
+             labels={'work_year': 'Work year', 'salary_in_usd': 'Salary in USD', 'experience_level': 'Experience level'},
+             title='Salary vs Experience level by work year')
+st.plotly_chart(fig)
+#Bij 2020 was heeft maar 1 medewerker expeience level as Ex, en bij 2021 is 0
+
+
+
+#barplot gemiddeld salary per experience level per jaar
+b = clean_data.groupby(['work_year', 'experience_level'])['salary_in_usd'].mean()
+
+fig = px.bar(b.reset_index(), x='work_year', y='salary_in_usd', color='experience_level',
+             category_orders={'work_year': ['2020', '2021', '2022', '2023'],
+                              'experience_level': ['EN', 'EX', 'MI', 'SE']},
+             labels={'work_year': 'Work year', 'salary_in_usd': 'Salary in USD', 'experience_level': 'Experience level'},
+             title='Salary by Experience Level by year')
+st.plotly_chart(fig)
+
+
+#line plot 
+fig = px.line(b.reset_index(), x='work_year', y='salary_in_usd', color='experience_level',
+              category_orders={'work_year': ['2020', '2021', '2022', '2023'],
+                               'experience_level': ['EN', 'EX', 'MI', 'SE']},
+              labels={'work_year': 'Work year', 'salary_in_usd': 'Salary in USD', 'experience_level': 'Experience level'},
+              title='Salary by Experience Level by year')
+fig.update_xaxes(type='category')
+st.plotly_chart(fig)
+
+
+
