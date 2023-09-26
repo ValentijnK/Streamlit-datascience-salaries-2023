@@ -1,10 +1,11 @@
 import streamlit as st
-
-# Setup Streamlit app
+import pandas as pd 
+import seaborn as sns
+import matplotlib.pyplot as plt
+import plotly.express as px
 st.title('Salary of datascientist')
 
-import pandas as pd 
-
+#dataset inladen
 df = pd.read_csv("ds_salaries.csv")
 
 column = df['job_title']
@@ -13,15 +14,6 @@ functie_100 = functie_per_group[functie_per_group>100]
 clean_data = df[df['job_title'].isin(functie_100.index)]
 clean_data['work_year'] = clean_data['work_year'].astype('str')
 
-
-x = 'experience_level'
-y = 'salary_in_usd'
-
-import seaborn as sns
-import matplotlib.pyplot as plt
-import plotly.express as px
-
-a = clean_data.groupby('experience_level')['salary_in_usd'].mean()
 
 # Salary historgram by experience level
 fig = px.histogram(clean_data, x="salary_in_usd", nbins = 10, color = 'experience_level',
@@ -49,7 +41,6 @@ fig = px.box(clean_data, x='experience_level', y='salary_in_usd',
 st.plotly_chart(fig)
 
 
-
 # Salary vs experience_level box plot by year
 fig = px.box(clean_data, x='work_year', y='salary_in_usd', color='experience_level',
              category_orders={'work_year': ['2020', '2021', '2022', '2023'],
@@ -58,7 +49,6 @@ fig = px.box(clean_data, x='work_year', y='salary_in_usd', color='experience_lev
              title='Salary vs Experience level by work year')
 st.plotly_chart(fig)
 #Bij 2020 was heeft maar 1 medewerker expeience level as Ex, en bij 2021 is 0
-
 
 
 #barplot gemiddeld salary per experience level per jaar
@@ -80,6 +70,4 @@ fig = px.line(b.reset_index(), x='work_year', y='salary_in_usd', color='experien
               title='Salary by Experience Level by year')
 fig.update_xaxes(type='category')
 st.plotly_chart(fig)
-
-
 
