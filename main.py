@@ -1,9 +1,6 @@
 # Imports
 import pandas as pd
 import streamlit as st
-import seaborn as sns
-import matplotlib.pyplot as plt
-import os
 
 st.set_page_config(
     page_title='Home'
@@ -11,7 +8,7 @@ st.set_page_config(
 
 
 # Load CSV file into DataFrame
-df = pd.read_csv(os.getcwd() + '/ds_salaries.csv')
+df = pd.read_csv('@/../ds_salaries.csv')
 
 # Filter job titles based on top 5 entries
 column = df['job_title']
