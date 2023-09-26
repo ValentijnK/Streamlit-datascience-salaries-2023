@@ -8,7 +8,7 @@ st.set_page_config(
 
 
 # Load CSV file into DataFrame
-df = pd.read_csv('/ds_salaries.csv')
+df = pd.read_csv('ds_salaries.csv')
 
 # Filter job titles based on top 5 entries
 column = df['job_title']
