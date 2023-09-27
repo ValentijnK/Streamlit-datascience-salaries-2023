@@ -117,7 +117,7 @@ We beginnen met een korte beschrijving van de dataset. Het bestand ds_salaries.c
 
 Gemiddelde salaris per baan
 
-Om de gemiddelde salarissen per banen te berekenen, moeten we eerst de verschillende categorieën van datascience-banen identificeren, dit is gedaan op basis van  "job_title" in het gegevensbestand, omdat wij natuurlijk ook salarissen nodig hebben gebruiken wij ook "salary_in_usd" uit het gegevensbestand. Vervolgens kunnen we voor elke categorie het gemiddelde salaris berekenen. Wij hebben onze bevindingen uitgebeeld in een Histogram, zie de plot(‘ Avererage job per category’).
+Om de gemiddelde salarissen per banen te berekenen, moeten we eerst de verschillende categorieën van datascience-banen identificeren, dit is gedaan op basis van  "job_title" in het gegevensbestand, omdat wij natuurlijk ook salarissen nodig hebben gebruiken wij ook "salary_in_usd" uit het gegevensbestand. Vervolgens kunnen we voor elke categorie het gemiddelde salaris berekenen per functie. Wij hebben onze bevindingen uitgebeeld in een Histogram, zie de plot(‘ Avererage job per category’).
 
 
 Gemiddelde salaris per bedrijfsgrootte 
