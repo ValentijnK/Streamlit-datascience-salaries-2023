@@ -140,4 +140,4 @@ fig = px.line(b.reset_index(), x='work_year', y='salary_in_usd', color='experien
 fig.update_xaxes(type='category')
 st.plotly_chart(fig)
 
-st.button('Thank you for reading ', on_click=st.balloons)
+# st.button('Thank you for reading ', on_click=st.balloons)
