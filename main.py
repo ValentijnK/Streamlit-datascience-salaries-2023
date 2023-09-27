@@ -107,18 +107,19 @@ In deze blogpost zullen we een analyse uitvoeren van het bestand "ds_salaries.cs
 Belangrijke informatie uit de dataset
 We beginnen met een korte beschrijving van de dataset. Het bestand ds_salaries.csv bevat gegevens over salarissen in het veld van Data en de bijhorende functies Het bevat verschillende kolommen, waaronder:
 
-1. Experience_level: Het aantal jaren ervaring van de respondenten in 
-2. Residence: Waar de respondenten wonen 
+1. Experience_level: Het aantal jaren ervaring van de respondenten. 
+2. Residence: Waar de respondenten wonen. 
 3. Job_title: De functie of positie van de respondent.
 4. Salary: Het salaris van de respondent.
-5. Company_size: De grootte van het bedrijf uitgedrukt in klein(S), medium(M) en groot (L)
-6. Experience_level: Het ervaringsniveau van de respondent 
-7. Company_location: Locatie van he bedrijf
-
+5. Company_size: De grootte van het bedrijf uitgedrukt in klein(S), medium(M) en groot (L).
+6. Experience_level: Het ervaringsniveau van de respondent. 
+7. Company_location: Locatie van het bedrijf.
 
 Gemiddelde salaris per baan
 
-Om de gemiddelde salarissen per banen te berekenen, moeten we eerst de verschillende categorieën van datascience-banen identificeren op basis van de "job_title" in het gegevensbestand. Vervolgens kunnen we voor elke categorie het gemiddelde salaris berekenen. Wij hebben onze bevindingen uitgebeeld in de Historgram, zie de plot(‘ Avererage job per category’).
+Om de gemiddelde salarissen per banen te berekenen, moeten we eerst de verschillende categorieën van datascience-banen identificeren, dit is gedaan op basis van  "job_title" in het gegevensbestand, omdat wij natuurlijk ook salarissen nodig hebben gebruiken wij ook "salary_in_usd" uit het gegevensbestand. Vervolgens kunnen we voor elke categorie het gemiddelde salaris berekenen. Wij hebben onze bevindingen uitgebeeld in een Histogram, zie de plot(‘ Avererage job per category’).
+
+
 Gemiddelde salaris per bedrijfsgrootte 
 
 Wij gaan in het onderstaande stukje kijken naar de gemiddelde salarissen per bedrijfsgrootte, dit doen wij door de data uit het bestand "ds_salaries.csv". De twee belangrijkste variabelen die we in dit onderzoek zullen gebruiken zijn "salary_in_usd" en "company_size". 
