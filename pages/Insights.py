@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from plotly import express as px
+import plotly.graph_objects as go
 import country_converter as coco
 
 # Setting page configuration
@@ -29,8 +30,9 @@ fig.update_xaxes(
     tickvals=[0, 1, 2, 3, 4, 5],
     ticktext=job_cat
 )
-
 st.plotly_chart(fig)
+
+
 # JIP
 # Salary vs company size bar chart
 company_size_salary = df_salary.groupby('company_size')['salary_in_usd'].mean().round(0).reset_index()
