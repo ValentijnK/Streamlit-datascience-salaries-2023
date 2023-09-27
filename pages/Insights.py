@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from plotly import express as px
+import country_converter as coco
 
 # Setting page configuration
 st.set_page_config(
@@ -14,6 +15,8 @@ column = df['job_title']
 functie_per_group = df['job_title'].value_counts()
 functie_100 = functie_per_group[functie_per_group > 100]
 df_salary = df[df['job_title'].isin(functie_100.index)]
+country = coco.convert(names=df['company_location'], to="ISO3")
+df['company_location'] = country
 
 # Salary per job role
 
@@ -46,6 +49,25 @@ fig = px.box(df_salary, x='company_size', y='salary_in_usd',
              labels={'salary_in_usd': 'Salary in USD', 'company_size': 'Company Size'},
              title='Salary vs. Company Size')
 fig.update_xaxes(categoryorder='array', categoryarray=['L', 'M', 'S'], tickvals=[0, 1, 2], ticktext=['Large', 'Medium', 'Small'])
+st.plotly_chart(fig)
+
+# Avarage salary by Company Location
+Large = st.checkbox('Large', value=True)
+Medium = st.checkbox('Medium', value=True)
+Small = st.checkbox('Small', value=True)
+selected_sizes = []
+if Large:
+    selected_sizes.append('L')
+if Medium:
+    selected_sizes.append('M')
+if Small:
+    selected_sizes.append('S')
+filtered_df = df[df['company_size'].isin(selected_sizes)]
+salary_location = filtered_df.groupby(['salary_in_usd', 'company_location']).size().reset_index()
+means = salary_location.groupby('company_location').mean().reset_index()
+
+fig = px.choropleth(locations = means['company_location'], color = means['salary_in_usd'],
+                    title = 'Average Salary by Company Location')
 st.plotly_chart(fig)
 
 # Chong
