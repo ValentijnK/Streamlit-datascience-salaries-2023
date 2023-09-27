@@ -87,7 +87,7 @@ salary_range = st.slider("Select Salary Range (USD)",
                          step=1000)
 
 filtered_data = clean_data[(clean_data['salary_in_usd'] >= salary_range[0]) & (clean_data['salary_in_usd'] <= salary_range[1])]
-fig = px.histogram(clean_data, x="salary_in_usd", nbins = 10, color = 'experience_level',
+fig = px.histogram(filtered_data, x="salary_in_usd", nbins = 10, color = 'experience_level',
                    category_orders={'experience_level': ['SE', 'MI', 'EX', 'EN']},
                    text_auto = True)
 # Overlay both histograms
