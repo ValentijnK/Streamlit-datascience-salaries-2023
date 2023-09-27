@@ -99,7 +99,7 @@ st.write(
 st.header('Over de dataset')
 st.divider()
 st.dataframe(filter_dataframe(df))
-st.write('
+st.write(""
 Het Ontdekken van verbanden in het bestand ‘ds_salaries.csv’
 Data Science is een vakgebied dat draait om het verzamelen, analyseren en interpreteren van gegevens om waardevolle inzichten te verkrijgen. Een van de meest krachtige technieken binnen datagestuurde besluitvorming is het onderzoeken van correlaties tussen variabelen. In deze blogpost zullen we een analyse uitvoeren van het bestand "ds_salaries.csv" om te ontdekken welke verbanden er bestaan tussen de variabelen in dit dataset.
 Belangrijke informatie uit de dataset
@@ -157,5 +157,5 @@ In dit onderzoek naar het bestand "ds_salaries.csv" hebben we verschillende verb
 Dit onderzoek heeft waardevolle inzichten opgeleverd over de factoren die van invloed zijn op salarissen in het Data Science-veld, waaronder de functie, bedrijfsgrootte, locatie en ervaring van professionals. Deze informatie kan nuttig zijn voor zowel werkzoekenden als werkgevers om weloverwogen beslissingen te nemen met betrekking tot beloning en carrièreontwikkeling in de datagestuurde industrie.
 
 
-')
+"")
 
