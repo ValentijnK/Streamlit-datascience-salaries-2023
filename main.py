@@ -116,6 +116,7 @@ Gemiddelde salaris per baan
 
 Om de gemiddelde salarissen per banen te berekenen, moeten we eerst de verschillende categorieën van datascience-banen identificeren op basis van de "job_title" in het gegevensbestand. Vervolgens kunnen we voor elke categorie het gemiddelde salaris berekenen. Wij hebben onze bevindingen uitgebeeld in de Historgram, zie de plot(‘ Avererage job per category’).
 Gemiddelde salaris per bedrijfsgrootte 
+
 Wij gaan in het onderstaande stukje kijken naar de gemiddelde salarissen per bedrijfsgrootte, dit doen wij door de data uit het bestand "ds_salaries.csv". De twee belangrijkste variabelen die we in dit onderzoek zullen gebruiken zijn "salary_in_usd" en "company_size". 
 Uit onze analyse blijkt dat middelgrote bedrijven de hoogste salarissen betalen. Zij betalen gemiddeld wel $32000 meer dan grote bedrijven, wij hebben deze data gevisualiseerd in een histogram. Zie de  plot (‘Average Salary per company size’). De middelgrote bedrijven betalen over het algemeen het meest, daarna de grote bedrijven en als laatste de kleine bedrijven
  
@@ -133,14 +134,18 @@ Bedrijven hebben de neiging om hun salarissen aan te passen aan de kosten van le
 Salaris vs. ervaringsniveau
 
 Het verband tussen salaris en ervaringsniveau is een belangrijk aspect van de arbeidsmarkt dat de loopbaanontwikkeling van individuen beïnvloedt. Het is algemeen bekend dat ervaring een aanzienlijke impact heeft op het salaris dat een persoon kan verwachten te verdienen gedurende zijn of haar carrière. Dit verband kan worden verklaard door verschillende factoren die samenkomen om het salaris te beïnvloeden.
-Naarmate iemand meer jaren in een bepaalde branche of functie werkt, vergaart hij of zij doorgaans diepgaandere kennis en expertise. Hierdoor zijn zij vaak in een positie om hogere salarissen te onderhandelen.
+Naarmate iemand meer jaren in een bepaalde branche of functie werkt, vergaart hij of zij doorgaans diepgaandere kennis en expertise. 
+
+Hierdoor zijn zij vaak in een positie om hogere salarissen te onderhandelen.
 Ten tweede speelt senioriteit een belangrijke rol. Werknemers met meer ervaring kunnen doorgaans rekenen op promoties en leiderschapsposities, die vaak gepaard gaan met aanzienlijke salarisverhogingen. Wij hebben dit inzichtelijk gemaakt doormiddel slider van voor het salaris, deze slider interacteert met de plot die eronder staat aan de hand het experience_level.
 Zie de plot (‘Salary Histogram’) 
 
 Salaris per ervaringsniveau 
 
 In het dynamische veld van data-analyse en -wetenschap is het salaris sterk afhankelijk van het ervaringsniveau van professionals. Verschillende ervaringsniveaus weerspiegelen niet alleen een groeiende vaardigheid, maar ook een  begrip van complexe gegevensprocessen en -technologieën. Hieronder volgt een overzicht van het salaris per ervaringsniveau in het data-gebied. 
-Om de salarissen tegenover de werkervaring in beeld te brengen hebben wij een boxplot gemaakt, zie plot (‘Salary by experience level’). Uit deze plot is uit te lezen wat het mediaan, eerste en derde kwartiel, de boven en ondergrens, en de uitschieters zijn van de salarissen. Deze zijn gerangschikt per ervaringsniveau. Dit hebben wij ook uitgewerkt per werkjaar.
+Om de salarissen tegenover de werkervaring in beeld te brengen hebben wij een boxplot gemaakt, zie plot (‘Salary by experience level’). 
+
+Uit deze plot is uit te lezen wat het mediaan, eerste en derde kwartiel, de boven en ondergrens, en de uitschieters zijn van de salarissen. Deze zijn gerangschikt per ervaringsniveau. Dit hebben wij ook uitgewerkt per werkjaar.
 Zie de boxplot (‘Salary by experience level by work year’)
 
 Conclusie
