@@ -106,6 +106,7 @@ Data Science is een vakgebied dat draait om het verzamelen, analyseren en interp
 In deze blogpost zullen we een analyse uitvoeren van het bestand "ds_salaries.csv" om te ontdekken welke verbanden er bestaan tussen de variabelen in dit dataset.
 Belangrijke informatie uit de dataset
 We beginnen met een korte beschrijving van de dataset. Het bestand ds_salaries.csv bevat gegevens over salarissen in het veld van Data en de bijhorende functies Het bevat verschillende kolommen, waaronder:
+
 1. Experience_level: Het aantal jaren ervaring van de respondenten in 
 2. Residence: Waar de respondenten wonen 
 3. Job_title: De functie of positie van de respondent.
@@ -113,6 +114,7 @@ We beginnen met een korte beschrijving van de dataset. Het bestand ds_salaries.c
 5. Company_size: De grootte van het bedrijf uitgedrukt in klein(S), medium(M) en groot (L)
 6. Experience_level: Het ervaringsniveau van de respondent 
 7. Company_location: Locatie van he bedrijf
+
 
 Gemiddelde salaris per baan
 
@@ -133,6 +135,7 @@ Gemiddelde Salaris per bedrijfslocatie
 Het gemiddelde salaris varieert aanzienlijk afhankelijk van de locatie van het bedrijf waarin iemand werkzaam is. Dit wordt inzichtelijk wanneer we kijken naar de gemiddelde salarissen per bedrijfslocatie.
 Bedrijven hebben de neiging om hun salarissen aan te passen aan de kosten van levensonderhoud, concurrentie op de arbeidsmarkt en andere lokale factoren. Wij hebben dit inzichtelijk gemaakt door middel van een map,  zie de plot(‘Average Salary by Company Location’)
 
+
 Salaris vs. ervaringsniveau
 
 Het verband tussen salaris en ervaringsniveau is een belangrijk aspect van de arbeidsmarkt dat de loopbaanontwikkeling van individuen beïnvloedt. Het is algemeen bekend dat ervaring een aanzienlijke impact heeft op het salaris dat een persoon kan verwachten te verdienen gedurende zijn of haar carrière. Dit verband kan worden verklaard door verschillende factoren die samenkomen om het salaris te beïnvloeden.
@@ -142,6 +145,7 @@ Hierdoor zijn zij vaak in een positie om hogere salarissen te onderhandelen.
 Ten tweede speelt senioriteit een belangrijke rol. Werknemers met meer ervaring kunnen doorgaans rekenen op promoties en leiderschapsposities, die vaak gepaard gaan met aanzienlijke salarisverhogingen. Wij hebben dit inzichtelijk gemaakt doormiddel slider van voor het salaris, deze slider interacteert met de plot die eronder staat aan de hand het experience_level.
 Zie de plot (‘Salary Histogram’) 
 
+
 Salaris per ervaringsniveau 
 
 In het dynamische veld van data-analyse en -wetenschap is het salaris sterk afhankelijk van het ervaringsniveau van professionals. Verschillende ervaringsniveaus weerspiegelen niet alleen een groeiende vaardigheid, maar ook een  begrip van complexe gegevensprocessen en -technologieën. Hieronder volgt een overzicht van het salaris per ervaringsniveau in het data-gebied. 
@@ -149,6 +153,7 @@ Om de salarissen tegenover de werkervaring in beeld te brengen hebben wij een bo
 
 Uit deze plot is uit te lezen wat het mediaan, eerste en derde kwartiel, de boven en ondergrens, en de uitschieters zijn van de salarissen. Deze zijn gerangschikt per ervaringsniveau. Dit hebben wij ook uitgewerkt per werkjaar.
 Zie de boxplot (‘Salary by experience level by work year’)
+
 
 Conclusie
 
