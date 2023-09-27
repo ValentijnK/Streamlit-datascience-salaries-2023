@@ -52,6 +52,7 @@ fig.update_xaxes(categoryorder='array', categoryarray=['L', 'M', 'S'], tickvals=
 st.plotly_chart(fig)
 
 # Avarage salary by Company Location
+st.subheader('Average Salary by Company Location')
 Large = st.checkbox('Large', value=True)
 Medium = st.checkbox('Medium', value=True)
 Small = st.checkbox('Small', value=True)
@@ -66,8 +67,7 @@ filtered_df = df[df['company_size'].isin(selected_sizes)]
 salary_location = filtered_df.groupby(['salary_in_usd', 'company_location']).size().reset_index()
 means = salary_location.groupby('company_location').mean().reset_index()
 
-fig = px.choropleth(locations = means['company_location'], color = means['salary_in_usd'],
-                    title = 'Average Salary by Company Location')
+fig = px.choropleth(locations = means['company_location'], color = means['salary_in_usd'])
 st.plotly_chart(fig)
 
 # Chong
