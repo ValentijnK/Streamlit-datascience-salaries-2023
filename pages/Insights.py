@@ -7,7 +7,7 @@ st.set_page_config(
     page_title='Insights',
     page_icon=':chart_with_upwards_trend:'
 )
-df = pd.read_csv('@/../ds_salaries.csv')
+df = pd.read_csv('./../ds_salaries.csv')
 
 # Filter job titles based on top 5 entries
 column = df['job_title']
