@@ -100,10 +100,10 @@ st.header('Over de dataset')
 st.divider()
 st.dataframe(filter_dataframe(df))
 st.write('
-Het Ontdekken van verbanden  in het bestand ‘ds_salaries.csv’
+Het Ontdekken van verbanden  in het bestand ds_salaries.csv
 Data Science is een vakgebied dat draait om het verzamelen, analyseren en interpreteren van gegevens om waardevolle inzichten te verkrijgen. Een van de meest krachtige technieken binnen datagestuurde besluitvorming is het onderzoeken van correlaties tussen variabelen. In deze blogpost zullen we een analyse uitvoeren van het bestand "ds_salaries.csv" om te ontdekken welke verbanden er bestaan tussen de variabelen in dit dataset.
 Belangrijke informatie uit de dataset
-We beginnen met een korte beschrijving van de dataset. Het bestand "ds_salaries.csv" bevat gegevens over salarissen in het veld van Data en de bijhorende functies Het bevat verschillende kolommen, waaronder:
+We beginnen met een korte beschrijving van de dataset. Het bestand ds_salaries.csv bevat gegevens over salarissen in het veld van Data en de bijhorende functies Het bevat verschillende kolommen, waaronder:
 1. Experience_level: Het aantal jaren ervaring van de respondenten in 
 2. Residence: Waar de respondenten wonen 
 3. Job_title: De functie of positie van de respondent.
