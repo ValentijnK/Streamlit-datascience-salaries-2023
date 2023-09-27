@@ -137,7 +137,6 @@ Naarmate iemand meer jaren in een bepaalde branche of functie werkt, vergaart hi
 Ten tweede speelt senioriteit een belangrijke rol. Werknemers met meer ervaring kunnen doorgaans rekenen op promoties en leiderschapsposities, die vaak gepaard gaan met aanzienlijke salarisverhogingen. Wij hebben dit inzichtelijk gemaakt doormiddel slider van voor het salaris, deze slider interacteert met de plot die eronder staat aan de hand het experience_level.
 Zie de plot (‘Salary Histogram’) 
 
- 
 Salaris per ervaringsniveau 
 
 In het dynamische veld van data-analyse en -wetenschap is het salaris sterk afhankelijk van het ervaringsniveau van professionals. Verschillende ervaringsniveaus weerspiegelen niet alleen een groeiende vaardigheid, maar ook een  begrip van complexe gegevensprocessen en -technologieën. Hieronder volgt een overzicht van het salaris per ervaringsniveau in het data-gebied. 
