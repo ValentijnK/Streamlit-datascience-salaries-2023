@@ -22,7 +22,7 @@ functie_100 = functie_per_group[functie_per_group > 100]
 df_salary = df[df['job_title'].isin(functie_100.index)]
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-    modify = st.checkbox("Add filters")
+    modify = True
 
     if not modify:
         return df
