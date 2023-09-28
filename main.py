@@ -114,7 +114,6 @@ df["company_size"] = df["company_size"].astype("category").cat.codes
 import plotly.express as px
 #correlatie bepalen
 corr_matrix = df.corr()
-
 fig = px.imshow(corr_matrix, x=corr_matrix.columns, y=corr_matrix.columns, 
                 text_auto = True, title = 'Correlatiematrix')
 fig.update_layout(width=900, height=900)
