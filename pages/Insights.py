@@ -44,7 +44,7 @@ st.write("""Gemiddelde salaris per bedrijfsgrootte
 
 Wij gaan in het onderstaande stukje kijken naar de gemiddelde salarissen per bedrijfsgrootte, dit doen wij met de data uit het bestand "ds_salaries.csv". De twee belangrijkste variabelen die we in dit hier zullen gebruiken zijn "salary_in_usd" en "company_size". 
 Uit onze analyse blijkt dat middelgrote bedrijven de hoogste salarissen betalen. Zij betalen gemiddeld wel $32000 meer dan grote bedrijven, wij hebben deze data gevisualiseerd in een histogram. Zie de  plot (‘Average Salary per company size’). De middelgrote bedrijven betalen over het algemeen het meest, daarna de grote bedrijven en als laatste de kleine bedrijven
- 
+
 """)
 
 st.subheader('Average salary per company size')
