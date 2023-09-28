@@ -20,7 +20,8 @@ country = coco.convert(names=df['company_location'], to="ISO3")
 df['company_location'] = country
 
 # Salary per job role
-st.write("""Gemiddelde salaris per baan
+st.header('Gemiddelde salaris per baan')
+st.write("""
 
 Om de gemiddelde salarissen per banen te berekenen, moeten we eerst de verschillende categorieën van datascience-banen identificeren, dit is gedaan op basis van  "job_title" in het gegevensbestand, omdat wij natuurlijk ook salarissen nodig hebben gebruiken wij ook "salary_in_usd" uit het gegevensbestand. Vervolgens kunnen we voor elke categorie het gemiddelde salaris berekenen per functie. Wij hebben onze bevindingen uitgebeeld in een Histogram, zie de plot(‘ Avererage job per category’).
 """)
@@ -40,6 +41,7 @@ st.plotly_chart(fig)
 
 # JIP
 # Salary vs company size bar chart
+st.header('Gemiddelde salaris per bedrijfsgrootte')
 st.write("""Gemiddelde salaris per bedrijfsgrootte 
 
 Wij gaan in het onderstaande stukje kijken naar de gemiddelde salarissen per bedrijfsgrootte, dit doen wij met de data uit het bestand "ds_salaries.csv". De twee belangrijkste variabelen die we in dit hier zullen gebruiken zijn "salary_in_usd" en "company_size". 
@@ -60,6 +62,7 @@ st.plotly_chart(fig)
 
 
 # Salary vs company size box plot
+st.header('Salaris vs. bedrijfsgrootte')
 st.write("""Salaris vs. bedrijfsgrootte 
 
 Het gemiddelde salaris  varieert sterk afhankelijk van de omvang van het bedrijf waarin iemand werkt. Over het algemeen geldt dat grotere bedrijven vaak hogere salarissen aanbieden dan kleinere ondernemingen. Dit kan komen doordat grotere bedrijven meestal meer financiële middelen hebben en een bredere reeks bieden. 
@@ -74,6 +77,7 @@ st.plotly_chart(fig)
 
 
 # Avarage salary by Company Location
+st.header('Gemiddelde Salaris per bedrijfslocatie')
 st.write("""Gemiddelde Salaris per bedrijfslocatie 
 
 Het gemiddelde salaris varieert aanzienlijk afhankelijk van de locatie van het bedrijf waarin iemand werkzaam is. Dit wordt inzichtelijk wanneer we kijken naar de gemiddelde salarissen per bedrijfslocatie.
@@ -104,6 +108,7 @@ clean_data['work_year'] = clean_data['work_year'].astype('str')
 
 
 # Salary historgram by experience level
+st.header('Salaris vs. ervaringsniveau')
 st.write("""Salaris vs. ervaringsniveau
 
 Het verband tussen salaris en ervaringsniveau is een belangrijk aspect van de arbeidsmarkt dat de loopbaanontwikkeling van individuen beïnvloedt. Het is algemeen bekend dat ervaring een aanzienlijke impact heeft op het salaris dat een persoon kan verwachten te verdienen gedurende zijn of haar carrière. Dit verband kan worden verklaard door verschillende factoren die samenkomen om het salaris te beïnvloeden.
@@ -137,6 +142,7 @@ st.plotly_chart(fig)
 
 
 # Salary vs experience_level box plot
+st.header('Salaris per ervaringsniveau')
 st.write("""Salaris per ervaringsniveau 
 
 In het dynamische veld van data-analyse en -wetenschap is het salaris sterk afhankelijk van het ervaringsniveau van professionals. Verschillende ervaringsniveaus weerspiegelen niet alleen een groeiende vaardigheid, maar ook een  begrip van complexe gegevensprocessen en -technologieën. Hieronder volgt een overzicht van het salaris per ervaringsniveau in het data-gebied. 
@@ -184,7 +190,7 @@ fig = px.line(b.reset_index(), x='work_year', y='salary_in_usd', color='experien
 fig.update_xaxes(type='category')
 st.plotly_chart(fig)
 
-
+st.header('Conclusie')
 st.write("""Conclusie
 
 In dit onderzoek naar het bestand "ds_salaries.csv" hebben we verschillende verbanden en inzichten ontdekt met betrekking tot salarissen in het vakgebied van Data Science. We hebben gekeken naar gemiddelde salarissen per baan, bedrijfsgrootte, bedrijfslocatie en ervaringsniveau. Hier zijn enkele belangrijke conclusies:
