@@ -100,22 +100,36 @@ st.header('Over de dataset')
 st.divider()
 st.dataframe(filter_dataframe(df))
 
+st.write("""
+Het Ontdekken van verbanden  in het bestand 'ds_salaries.csv'
+Data Science is een vakgebied dat draait om het verzamelen, analyseren en interpreteren van gegevens om waardevolle inzichten te verkrijgen. Een van de meest krachtige technieken binnen datagestuurde besluitvorming is het onderzoeken van correlaties tussen variabelen. 
+
+In deze blogpost zullen we een analyse uitvoeren van het bestand "ds_salaries.csv" om te ontdekken welke verbanden er bestaan tussen de variabelen in dit dataset.
+Belangrijke informatie uit de dataset
+We beginnen met een korte beschrijving van de dataset. Het bestand ds_salaries.csv bevat gegevens over salarissen in het veld van Data en de bijhorende functies Het bevat verschillende kolommen, waaronder:
+
+1. Experience_level: Het aantal jaren ervaring van de respondenten. 
+2. Residence: Waar de respondenten wonen. 
+3. Job_title: De functie of positie van de respondent.
+4. Salary: Het salaris van de respondent.
+5. Company_size: De grootte van het bedrijf uitgedrukt in klein(S), medium(M) en groot (L).
+6. Experience_level: Het ervaringsniveau van de respondent. 
+7. Company_location: Locatie van het bedrijf.""")
 
 #data type aanpassen
-df["work_year"] = df["work_year"].astype("category").cat.codes
-df["experience_level"] = df["experience_level"].astype("category").cat.codes
-df["employment_type"] = df["employment_type"].astype("category").cat.codes
-df["job_title"] = df["job_title"].astype("category").cat.codes
-df["employee_residence"] =df["employee_residence"].astype("category").cat.codes
-df["remote_ratio"] =df["remote_ratio"].astype("category").cat.codes
-df["company_location"] = df["company_location"].astype("category").cat.codes
-df["company_size"] = df["company_size"].astype("category").cat.codes
+#df["work_year"] = df["work_year"].astype("category").cat.codes
+#df["experience_level"] = df["experience_level"].astype("category").cat.codes
+#df["employment_type"] = df["employment_type"].astype("category").cat.codes
+#df["job_title"] = df["job_title"].astype("category").cat.codes
+#df["employee_residence"] =df["employee_residence"].astype("category").cat.codes
+#df["remote_ratio"] =df["remote_ratio"].astype("category").cat.codes
+#df["company_location"] = df["company_location"].astype("category").cat.codes
+#df["company_size"] = df["company_size"].astype("category").cat.codes
 
-import plotly.express as px
+#import plotly.express as px
 #correlatie bepalen
-corr_matrix = df.corr()
-fig = px.imshow(corr_matrix, x=corr_matrix.columns, y=corr_matrix.columns, 
-                text_auto = True, title = 'Correlatiematrix')
-fig.update_layout(width=900, height=900)
-st.plotly_chart(fig)
+#corr_matrix = df.corr()
+#fig = px.imshow(corr_matrix, x=corr_matrix.columns, y=corr_matrix.columns, text_auto = True, title = 'Correlatiematrix')
+#fig.update_layout(width=900, height=900)
+#st.plotly_chart(fig)
 
