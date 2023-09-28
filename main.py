@@ -111,6 +111,7 @@ df["remote_ratio"] =df["remote_ratio"].astype("category").cat.codes
 df["company_location"] = df["company_location"].astype("category").cat.codes
 df["company_size"] = df["company_size"].astype("category").cat.codes
 
+import plotly.express as px
 #correlatie bepalen
 corr_matrix = df.corr()
 
