@@ -102,17 +102,17 @@ st.dataframe(filter_dataframe(df))
 
 
 #data type aanpassen
-df_salary["work_year"] = df_salary["work_year"].astype("category").cat.codes
-df_salary["experience_level"] = df_salary["experience_level"].astype("category").cat.codes
-df_salary["employment_type"] = df_salary["employment_type"].astype("category").cat.codes
-df_salary["job_title"] = df_salary["job_title"].astype("category").cat.codes
-df_salary["employee_residence"] =df_salary["employee_residence"].astype("category").cat.codes
-df_salary["remote_ratio"] =df_salary["remote_ratio"].astype("category").cat.codes
-df_salary["company_location"] = df_salary["company_location"].astype("category").cat.codes
-df_salary["company_size"] = df_salary["company_size"].astype("category").cat.codes
+df["work_year"] = df["work_year"].astype("category").cat.codes
+df["experience_level"] = df["experience_level"].astype("category").cat.codes
+df["employment_type"] = df["employment_type"].astype("category").cat.codes
+df["job_title"] = df["job_title"].astype("category").cat.codes
+df["employee_residence"] =df["employee_residence"].astype("category").cat.codes
+df["remote_ratio"] =df["remote_ratio"].astype("category").cat.codes
+df["company_location"] = df["company_location"].astype("category").cat.codes
+df["company_size"] = df["company_size"].astype("category").cat.codes
 
 #correlatie bepalen
-corr_matrix = df_salary.corr()
+corr_matrix = df.corr()
 
 fig = px.imshow(corr_matrix, x=corr_matrix.columns, y=corr_matrix.columns, 
                 text_auto = True, title = 'Correlatiematrix')
