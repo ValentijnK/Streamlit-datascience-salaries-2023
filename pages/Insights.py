@@ -60,7 +60,7 @@ st.plotly_chart(fig)
 
 
 # Salary vs company size box plot
-st.writ("""Salaris vs. bedrijfsgrootte 
+st.write("""Salaris vs. bedrijfsgrootte 
 
 Het gemiddelde salaris  varieert sterk afhankelijk van de omvang van het bedrijf waarin iemand werkt. Over het algemeen geldt dat grotere bedrijven vaak hogere salarissen aanbieden dan kleinere ondernemingen. Dit kan komen doordat grotere bedrijven meestal meer financiële middelen hebben en een bredere reeks bieden. 
 Wij hebben voor deze bevinding 'salary_in_usd' en 'company_size' gebruikt en hebben deze gevisualiseerd in een boxplot, zie de plot(‘ Salary vs Company size’). Iets wat gelijk op te merken is aan de boxplot is dat de medium bedrijven de grootste uitschieters hebben van de salarissen.
